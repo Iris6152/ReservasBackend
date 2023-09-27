@@ -20,6 +20,5 @@ namespace SistemadeReservas.EntidadesDeNegocio
         [NotMapped]
         public int Top_Aux { get; set; }
         public List<Usuario> Usuarios { get; set; } //propiedad de navegación
-        public object Usuario { get; set; }
     }
 }

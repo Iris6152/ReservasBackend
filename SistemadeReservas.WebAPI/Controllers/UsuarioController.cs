@@ -93,7 +93,7 @@ namespace SistemadeReservas.WebAPI.Controllers
             string strUsuario = JsonSerializer.Serialize(pUsuario);
             Usuario usuario = JsonSerializer.Deserialize<Usuario>(strUsuario, option);
             var usuarios = await usuarioBL.BuscarIncluirRolesAsync(usuario);
-            usuarios.ForEach(s => s.Rol.Usuario = null); // Evitar la redundacia de datos
+            usuarios.ForEach(s => s.Rol.Usuarios = null); // Evitar la redundacia de datos
             return usuarios;
         }
 

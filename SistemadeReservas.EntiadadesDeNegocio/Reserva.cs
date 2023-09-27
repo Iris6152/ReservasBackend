@@ -10,7 +10,6 @@ namespace SistemadeReservas.EntidadesDeNegocio
 {
     public class Reserva
     {
-        public string? idServicio;
 
         [Key]
         public int Id { get; set; }
@@ -20,9 +19,10 @@ namespace SistemadeReservas.EntidadesDeNegocio
         [Display(Name = "Mesa")]
         public int IdMesa { get; set; }
 
+        [ForeignKey("Servicio")]
         [Required(ErrorMessage = "El servicio es requerido")]
-        [MaxLength(100, ErrorMessage = "El largo máximo es 100 caracteres")]
-        public string Servicio { get; set; }
+        [Display(Name = "Servicio")]
+        public int IdServicio { get; set; }
 
         [Required(ErrorMessage = "El cliente es requerido")]
         [MaxLength(200, ErrorMessage = "El largo máximo es 50 caracteres")]
@@ -52,7 +52,6 @@ namespace SistemadeReservas.EntidadesDeNegocio
         [NotMapped]
         public int Top_Aux { get; set; }
         public Mesa Mesa { get; set; }
-        public object IdServicio { get; set; }
-        public string Nombre { get; set; }
+        public Servicio Servicio { get; set; }
     }
 }

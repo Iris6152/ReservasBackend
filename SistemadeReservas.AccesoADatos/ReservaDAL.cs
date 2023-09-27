@@ -78,11 +78,13 @@ namespace SistemadeReservas.AccesoADatos
             if (pReserva.IdMesa > 0)
                 pQuery = pQuery.Where(s => s.IdMesa == pReserva.IdMesa);
 
+            if (pReserva.IdServicio > 0)
+                pQuery = pQuery.Where(s => s.IdServicio == pReserva.IdServicio);
+
             if (pReserva.Id > 0)
                 pQuery = pQuery.Where(s => s.Id == pReserva.Id);
 
-            if (!string.IsNullOrWhiteSpace(pReserva.idServicio))
-                pQuery = pQuery.Where(s => s.idServicio.Contains(pReserva.idServicio));
+
             if (!string.IsNullOrWhiteSpace(pReserva.Cliente))
                 pQuery = pQuery.Where(s => s.Cliente.Contains(pReserva.Cliente));
             if (!string.IsNullOrWhiteSpace(pReserva.Telefono))
