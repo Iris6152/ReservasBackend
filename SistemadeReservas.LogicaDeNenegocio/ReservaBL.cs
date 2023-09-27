@@ -42,7 +42,7 @@ namespace SistemadeReservas.LogicaDeNenegocio
 
         public async Task<List<Reserva>> BuscarIncluirDepartamentosAsync(Reserva pReserva)
         {
-            return await ReservaDAL.BuscarIncluirDepartamentosAsync(pReserva);
+            return await ReservaDAL.BuscarIncluirRelacionesAsync(pReserva);
         }
     }
 }
