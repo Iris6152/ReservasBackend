@@ -126,7 +126,7 @@ namespace SistemadeReservas.WebAPI.Controllers
                 var option = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
                 string strUsuario = JsonSerializer.Serialize(pUsuario);
                 Usuario usuario = JsonSerializer.Deserialize<Usuario>(strUsuario, option);
-                await usuarioBL.CambiarPasswordAsync(usuario, usuario.ConfirmPassword_aux);
+                await usuarioBL.CambiarPasswordAsync(usuario, usuario.confirmPassword_aux);
                 return Ok();
             }
             catch (Exception)

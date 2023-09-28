@@ -17,7 +17,7 @@ namespace SistemadeReservas.AccesoADatos
         public DbSet<Reserva> Reserva { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         { 
-    optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-MMB6RRI; Initial Catalog=SistemadeReservas;Integrated Security=True");
+    optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-MMB6RRI; Initial Catalog=SistemadeReservas;Integrated Security=True; Encrypt = false; TrustServerCertificate = false");
             //optionsBuilder.UseSqlServer(@"Data Source=deptosDB.mssql.somee.com; Initial Catalog=deptosDB; User Id=deptosProject; Pwd=admin2022");
         }
     }

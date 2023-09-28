@@ -10,15 +10,13 @@ namespace SistemadeReservas.EntidadesDeNegocio
 {
     public class Usuario
     {
-        public readonly string ConfirmPassword_aux;
-
         [Key]
         public int Id { get; set; }
 
         [ForeignKey("Rol")]
         [Required(ErrorMessage = "El Rol es obligatorio")]
         [Display(Name = "Rol")]
-        public int RolId { get; set; }
+        public int IdRol { get; set; }
 
 
         [Required(ErrorMessage = "El nombre es obligatorio")]
@@ -63,7 +61,6 @@ namespace SistemadeReservas.EntidadesDeNegocio
         [Compare("Password", ErrorMessage = "Password y confirmar password deben de ser iguales")]
         [Display(Name = "Confirmar password")]
         public string confirmPassword_aux { get; set; }
-        public object IdRol { get; set; }
     }
 
     public enum Estatus_Usuario
